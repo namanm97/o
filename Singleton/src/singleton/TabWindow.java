@@ -2,7 +2,8 @@ package singleton;
 
 import java.util.ArrayList;
 
-public class TabWindow {
+public class TabWindow
+{
 
 	public static TabWindow sc;
 	ArrayList<String> urls;
@@ -12,9 +13,19 @@ public class TabWindow {
 		
 	}
 	
-	public static TabWindow getInstance() {
+	public static TabWindow getInstance()
+    {
 		if(sc==null)
-			sc=new TabWindow();
+        {
+            synchronized(TabWindow.class)
+            {
+                if(sc==null)
+                {
+                    sc=new TabWindow();
+                }
+            }
+        }
+			
 		return sc;
 	}
 	
