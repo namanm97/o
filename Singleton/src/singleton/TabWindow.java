@@ -14,17 +14,14 @@ public class TabWindow
 	}
 	
 	public static TabWindow getInstance()
-    {
+       {
 		if(sc==null)
-        {
-            synchronized(TabWindow.class)
-            {
-                if(sc==null)
-                {
+    	   	 {
+     
                     sc=new TabWindow();
-                }
-            }
-        }
+                
+          	  }
+        
 			
 		return sc;
 	}
